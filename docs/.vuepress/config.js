@@ -4,4 +4,5 @@ module.exports = {
   themeConfig: {
     sidebar: ['/summary/', '/network/'],
   },
+  dest: 'public'
 };

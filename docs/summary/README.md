@@ -2,4 +2,4 @@
 
 ## 脑图
 
-![脑图](../.vuepress/public/images/naotu.png)
+![脑图](/images/naotu.png)
