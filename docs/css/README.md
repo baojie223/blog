@@ -36,3 +36,14 @@
 > [https://juejin.im/post/58e3a5a0a0bb9f0069fc16bb](一劳永逸的搞定 flex 布局)
 
 ### grid
+
+## 实践
+
+1. 使用工具类来定义元素的样式，而不是给元素一个语义化的 class 名，这样做有利于提高代码复用率，也可以免除掉一些起名的烦恼。
+
+```html
+--
+<div class="box"></div>
+++
+<div class="w-2 h-4 blue-4"></div>
+```
