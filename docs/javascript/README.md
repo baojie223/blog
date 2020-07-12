@@ -55,3 +55,39 @@
 6. 位置：indexOf, lastIndexOf
 7. 迭代：forEach, map, filter, every, some
 8. 归并：reduce, reduceRight
+
+### Date
+
+#### 方法
+
+1. new Date() 内部会根据参数的不同，调用 Date.parse 和 Date.UTC 将参数转换为毫秒数，不传参数的话就像调用了 Date.now
+2. 转换：toDateString ...
+3. 操作：getTime, setTime ...
+
+### RegExp
+
+#### 方法
+
+1. 实例方法：exec 和 test，其中 exec 在全局模式下每执行一次，就会匹配一次，直到字符串末尾
+2. 静态方法：input, leftContext, rightContext, lastMatch, lastParen, multiline, 以及用于存储捕获的$1 - $9
+
+### Function
+
+#### 方法
+
+1. call，apply，bind: 扩充作用域
+2. caller: 调用该函数的外部函数，假如是在全局作用域中调用，则为 null
+3. toString, toLocaleString, valueOf: 字符串形式返回函数的定义
+
+#### 内部变量
+
+1. arguments：callee 该函数引用的指针，可以用来与函数名解耦
+2. this：可由 call,apply,bind 指定
+
+### 基本包装类型
+
+new Object()会根据传入参数的类型调用不同的包装类型
+
+1. Boolean
+2. Number
+3. String: 用于转换的方法非常多，令人发指！
