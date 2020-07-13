@@ -86,8 +86,52 @@
 
 ### 基本包装类型
 
-new Object()会根据传入参数的类型调用不同的包装类型
+- new Object()会根据传入参数的类型调用不同的包装类型
+- 访问基本类型值的时候，会调用包装函数生成一个对象，操作完成后该对象会被立即销毁。
 
 1. Boolean
 2. Number
 3. String: 用于转换的方法非常多，令人发指！
+
+### Global 对象
+
+- 内置的顶级对象，浏览器通过 window 对象放置所有的 global 对象属性和方法，包括一些特殊值如 undefined,null,NaN,Infinity,以及很多构造函数
+
+### Math 对象
+
+## 面向对象
+
+### 理解对象
+
+1. 属性类型。分为数据属性和访问器属性，数据属性的特性为 configurable，enumerable，writable，value，访问器属性的特性为 configurable，enumerable，get，set。
+2. 定义属性。可以使用字面量定义数据属性（访问器属性不行），那么特性的值都为 true；可以用 Object.defineProperty 和 Object.defineProperties 定义，没有明确写的属性特性都为 false 或者 undefined。
+3. 读取属性。使用 Object.getOwnPropertyDescriptor 获取属性的特性。
+
+### 创建对象
+
+1. 工厂模式
+
+```javascript
+function createPerson(name, age) {
+  const o = new Object();
+  o.name = name;
+  o.age = age;
+  o.say = function() {
+    console.log(this.name);
+  };
+}
+```
+
+2. 构造函数模式
+
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.say = function() {
+    console.log(this.name);
+  };
+}
+```
+
+3. 原型模式
