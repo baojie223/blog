@@ -6,3 +6,11 @@ function createPerson(name, age) {
     console.log(this.name);
   };
 }
+
+function Person() {}
+
+Person.prototype.name = 'bao';
+Person.prototype.age = 24;
+Person.prototype.say = function() {
+  console.log(this.name);
+};

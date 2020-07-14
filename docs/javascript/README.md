@@ -135,3 +135,18 @@ function Person(name, age) {
 ```
 
 3. 原型模式
+
+```javascript
+function Person() {}
+
+Person.prototype.name = 'bao';
+Person.prototype.age = 24;
+Person.prototype.say = function() {
+  console.log(this.name);
+};
+```
+
+1. 一个函数被创建后,会自动添加上 prototype 属性,指向一个原型对象,而 prototype 也默认拥有一个 constructor 属性,指向这个函数.
+2. 判断原型的方法: Object.prototype.isPrototypeOf, Object.getPrototypeOf
+3. 实例属性和原型属性: in 可以判断两种属性, for in 可以枚举可枚举的两种属性, Object.keys()获取可枚举的实例属性, Object.getOwnPropertyNames()获取所有实例属性
+4. 缺点: 假如某个属性是引用类型, 那么一旦被修改会影响所有实例对象
