@@ -11,6 +11,7 @@ module.exports = {
       '/nodejs/',
       '/framework/',
       '/library/',
+      '/compilers/'
     ],
   },
   dest: 'public',
