@@ -22,7 +22,7 @@
   - 条件操作符：a ? b : c
   - 赋值操作符：= += \*= ...
   - 逗号操作符：,
-  - instanceof: 只要是原型链中出现过的构造函数, 就会返回true
+  - instanceof: 只要是原型链中出现过的构造函数, 就会返回 true
 - 流控制语句
   - if else
   - switch
@@ -214,12 +214,11 @@ function Person(name, age) {
 
 ### 继承
 
-一般OO语言都会支持两种继承, 分别是接口继承和实现继承, 接口继承继承方法签名, 类似于TS中继承一个抽象类, 实现继承继承实际的方法, 就是普通的继承.
-
+一般 OO 语言都会支持两种继承, 分别是接口继承和实现继承, 接口继承继承方法签名, 类似于 TS 中继承一个抽象类, 实现继承继承实际的方法, 就是普通的继承.
 
 1. 原型链
 
-- 定义: 原型链就是原型和实例的链条, 子类型实例指向的原型, 同时又是父类型的一个实例, 然后层层递进, 直到Object的原型对象
+- 定义: 原型链就是原型和实例的链条, 子类型实例指向的原型, 同时又是父类型的一个实例, 然后层层递进, 直到 Object 的原型对象
 - 缺点: 原型包含引用类型值的时候, 会造成污染; 无法传递参数
 
 2. 借用构造函数(经典继承)
@@ -235,7 +234,7 @@ function Person(name, age) {
 
 4. 原型式继承
 
-- ES5后可以使用Object.create()来实现
+- ES5 后可以使用 Object.create()来实现
 
 5. 寄生式继承
 
@@ -265,3 +264,38 @@ function Person(name, age) {
 2. 模块模式
 
 3. 增强的模块模式
+
+## window 对象
+
+- window 是浏览器的一个实例对象, 并且具有双重角色, 它既是通过 js 访问浏览器的接口, 也是 ECMAScript 规范中 Global 全局对象的实现
+
+### 全局作用域
+
+- 在全局作用域中定义的变量虽然可以通过 window.xxx 来访问, 但无法被 delete 操作符删除, 因为这个变量作为 window 的属性, 其内部属性 configurable 为 false
+
+### 定时器(间歇调用和超时调用)
+
+- setInterval 和 setTimeout
+
+- 推荐使用 setTimeout 来模拟 setInterval
+
+```javascript
+function mySetInterval(handler, wait) {
+  let _state = {
+    timer: null,
+    clear() {
+      clearTimeout(this.timer);
+    },
+  };
+  function _handler() {
+    handler();
+    _state.timer = setTimeout(_handler, wait);
+  }
+  _state.timer = setTimeout(_handler, wait);
+  return _state;
+}
+
+const interval = mySetInterval(() => console.log(this), 2000);
+// 用于清除定时器
+interval.clear();
+```
