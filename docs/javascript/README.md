@@ -299,3 +299,11 @@ const interval = mySetInterval(() => console.log(this), 2000);
 // 用于清除定时器
 interval.clear();
 ```
+
+### 系统对话框
+
+- alert, confirm, prompt
+
+### location对象
+
+### navigator对象
