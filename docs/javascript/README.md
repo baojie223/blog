@@ -307,3 +307,7 @@ interval.clear();
 ### location对象
 
 ### navigator对象
+
+## DOM
+
+总体的继承关系是Node -> HTMLElement -> HTMLInputElement, Node -> Document -> HTMLDocument
