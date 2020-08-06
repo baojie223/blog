@@ -103,6 +103,8 @@ function quick(a) {
     sort(a, lo, j - 1)
     sort(a, j + 1, hi)
   }
+
+  // 普通切分
   function partition(a, lo, hi) {
     let i = lo,
       j = hi + 1
@@ -113,10 +115,30 @@ function quick(a) {
       if (i >= j) break
       exch(a, i, j)
     }
-    exch(a, lo, j)
+    exch(a, j, lo)
     return j
   }
 }
 
+// 三向切分的快排
+function quick3way(a) {
+  sort(a, 0, a.length - 1)
+
+  function sort(a, lo, hi) {
+    if (hi <= lo) return
+    let lt = lo,
+      i = lo + 1,
+      gt = hi
+    let v = a[lo]
+    while (i <= gt) {
+      if (a[i] < v) exch(a, lt++, i++)
+      else if (a[i] > v) exch(a, i, gt--)
+      else i++
+    }
+    sort(a, lo, lt - 1)
+    sort(a, gt + 1, hi)
+  }
+}
+
 const a = [3, 1, 5, 4, 2]
-quick(a) // a?
+quick3way(a) // a?
