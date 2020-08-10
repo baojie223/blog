@@ -140,5 +140,28 @@ function quick3way(a) {
   }
 }
 
+function heap(a) {
+  let n = a.length
+  a.unshift(null)
+  for (let k = Math.floor(n / 2); k >= 1; k--) {
+    sink(a, k, n)
+  }
+  while (n > 1) {
+    exch(a, 1, n--)
+    sink(a, 1, n)
+  }
+  a.shift()
+
+  function sink(a, k, n) {
+    while (2 * k <= n) {
+      let j = 2 * k
+      if (j < n && less(a[j], a[j + 1])) j++
+      if (less(a[j], a[k])) break
+      exch(a, j, k)
+      k = j
+    }
+  }
+}
+
 const a = [3, 1, 5, 4, 2]
-quick3way(a) // a?
+heap(a) // a?
