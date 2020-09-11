@@ -180,7 +180,7 @@ function Person(name) {
 }
 ```
 
-- 上一张模式的改进, 可能是为了看起来更聚合一点
+- 上一种模式的改进, 可能是为了看起来更聚合一点
 
 6. 寄生构造函数模式
 
@@ -311,3 +311,33 @@ interval.clear();
 ## DOM
 
 总体的继承关系是Node -> HTMLElement -> HTMLInputElement, Node -> Document -> HTMLDocument
+
+## 客户端存储
+
+cookie和域名是绑定的(子域名有效), 不同浏览器下单个域名的最大cookie个数不同, 每个来源的cookie长度限制为4KB(应该是包含所有属性的)
+
+localstorage和域名, 协议, 端口绑定(子域名无效), 每个来源的大小限制为5MB(其实各个浏览器都不同)
+
+indexedDB只能由同源页面操作(相同协议, 域名, 端口), 大小限制不定
+
+## 最佳实践
+
+变量初始化为一个特定的数据类型
+
+变量命名为名词, 函数以动词开头, 返回布尔值的函数以is开头
+
+判断数据类型, 基本数据类型用typeof, 复杂数据类型用instanceof, 不要直接比较
+
+多使用原生方法, switch, 位运算, 速度比较快
+
+### DOM操作优化
+
+最小化现场更新, 使用document.createDocumentFragment()创建文档片段, 或者使用innerHTML来更新DOM
+
+使用事件代理
+
+减少对文档的查询, 尤其是对HTMLCollection的访问
+
+### 部署
+
+webpack
