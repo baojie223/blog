@@ -5,13 +5,15 @@ module.exports = {
     sidebar: [
       '/summary/',
       '/javascript/',
+      '/browser',
       '/network/',
       '/algo/',
       '/css/',
       '/nodejs/',
       '/framework/',
       '/library/',
-      '/compilers/'
+      '/compilers/',
+      '/system'
     ],
   },
   dest: 'public',
