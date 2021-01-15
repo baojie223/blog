@@ -1,14 +1,30 @@
 class Bromise {
+  state = 'pending'
+  result
+
   constructor(executor) {
     executor(this.resolve, null)
   }
 
-  resolve() {
-    this.onResolve()
-  }
+  static all() {}
 
-  then(onResolve, onReject) {
-    this.onResolve = onResolve
-    this.onReject = onReject
-  }
+  static race() {}
+
+  static resolve() {}
+
+  static reject() {}
+
+  onResolve() {}
+
+  onReject() {}
+
+  then() {}
+
+  catch() {}
+
+  finally() {}
 }
+
+new Promise((resolve, reject) => {
+
+})

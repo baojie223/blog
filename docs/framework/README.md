@@ -5,6 +5,9 @@
 ### 3.0相关
 1. 学会了ref的用法。
 
+### Vue Router
+1. useRouter, useRoute的实现都是通过provide, inject实现的
+
 ## React
 
 ### 实践
