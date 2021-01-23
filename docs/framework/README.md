@@ -8,6 +8,8 @@
 
 2. 响应式原理：每个 Vue 实例都有一个对应的 Watcher 实例
 
+3. 性能优化：vue.config.js中关闭prefetch
+
 ### 3.0 相关
 
 1. 学会了 ref 的用法。
