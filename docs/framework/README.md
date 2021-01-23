@@ -23,6 +23,9 @@
 - 组件独享：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave
 - 执行顺序：beforeRouteLeave => beforeEach => beforeRouteUpdate => beforeEnter => beforeRouteEnter => beforeResolve => afterEach
 
+### Vue Router
+1. useRouter, useRoute的实现都是通过provide, inject实现的
+
 ## React
 
 ### 实践
