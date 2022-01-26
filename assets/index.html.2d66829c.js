@@ -1,0 +1,1 @@
+const e={key:"v-15841be5",path:"/work/",title:"aa",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"CSS",slug:"css",children:[]}],git:{updatedTime:1612336104e3,contributors:[{name:"baojie223",email:"baojiedashuaibi@gmail.com",commits:1}]},filePathRelative:"work/README.md"};export{e as data};
