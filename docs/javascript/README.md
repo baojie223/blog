@@ -344,3 +344,10 @@ webpack
 
 ## 原型链
 1. https://juejin.cn/post/6901494216074100750
+
+## 错误监控
+
+1. 全局错误监控
+``` typescript
+window.onerror = function() {}
+```

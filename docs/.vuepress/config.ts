@@ -1,22 +1,19 @@
-import { defineConfig } from 'vuepress/config'
+import { DefaultThemeOptions, defineUserConfig } from 'vuepress'
 
-export default defineConfig({
+export default defineUserConfig<DefaultThemeOptions>({
+  lang: 'zh-CN',
   title: '前端成长之路',
   description: '构建知识体系，并分类整理对应的技术实现。',
+  theme: '@vuepress/theme-default',
   themeConfig: {
-    sidebar: [
-      '/summary/',
-      '/javascript/',
-      '/browser',
-      '/network/',
-      '/algo/',
-      '/css/',
-      '/nodejs/',
-      '/framework/',
-      '/library/',
-      '/compilers/',
-      '/system'
-    ],
+    logo: 'https://vuejs.org/images/logo.png',
+    sidebar: 'auto',
+    navbar: [
+      {
+        text: 'summary',
+        link: '/summary.md'
+      },
+      '/javascript/'
+    ]
   },
-  dest: 'public',
 });
