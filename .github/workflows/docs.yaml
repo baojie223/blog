@@ -28,7 +28,7 @@ jobs:
         run: pnpm docs:build
 
       - name: Deploy to GitHub Pages
-        use: crazy-max/ghaction-github-pages@v2
+        uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
           build_dir: docs/.vuepress/dist
