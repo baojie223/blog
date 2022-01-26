@@ -8,7 +8,6 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "prettier": "^2.0.5",
-    "vuepress": "^1.5.2"
+    "vuepress": "^1.9.7"
   }
 }
