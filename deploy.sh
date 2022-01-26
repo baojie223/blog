@@ -2,6 +2,8 @@
 
 set -e
 
+npm i pnpm -g
+
 pnpm run docs:build
 
 cd docs/.vuepress/dist
